@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<!--<soapenv:Envelope xmlns:com="com.busindia.webservices" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header/>
+  <soapenv:Body>
+    <com:GetPlaceList>
+      <arg0>
+        <franchUserID>?</franchUserID>
+        <password>biteam</password>
+        <userID>474</userID>
+        <userKey>?</userKey>
+        <userName>team@busindia.com</userName>
+        <userRole>?</userRole>
+        <userStatus>?</userStatus>
+        <userType>101</userType>
+      </arg0>
+    </com:GetPlaceList>
+  </soapenv:Body>
+</soapenv:Envelope>-->
+
+<soapenv:Envelope xmlns:com="com.busindia.webservices" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header />
+  <soapenv:Body>
+    <com:GetPlaceList>
+      <arg0>
+        <franchUserID>?</franchUserID>
+        <password>biteam</password>
+        <userID>474</userID>
+        <userKey>?</userKey>
+        <userName>team@busindia.com</userName>
+        <userRole>?</userRole>
+        <userStatus>?</userStatus>
+        <userType>101</userType>
+      </arg0>
+    </com:GetPlaceList>
+  </soapenv:Body>
+</soapenv:Envelope>
+
+<!--<soapenv:Envelope xmlns:com="com.busindia.webservices" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+  <soapenv:Header />
+  <soapenv:Body>
+    <com:GetPlaceList>
+      <arg0>
+        <franchUserID>?</franchUserID>
+        <password>biteam</password>
+        <userID>474</userID>
+        <userKey>?</userKey>
+        <userName>team@busindia.com</userName>
+        <userRole>?</userRole>
+        <userStatus>?</userStatus>
+        <userType>101</userType>
+      </arg0>
+    </com:GetPlaceList>
+  </soapenv:Body>
+</soapenv:Envelope>-->

@@ -1,0 +1,325 @@
+﻿<Page
+    x:Class="BusIndia_Universal.BusSeatSelection"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BusIndia_Universal"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <Style x:Name="WhiteBoxVaule" TargetType="StackPanel">
+            <Setter Property="Background" Value="AntiqueWhite"></Setter>
+        </Style>
+        <Style x:Name="TotalValueBox" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#F2CA60"></Setter>
+            <Setter Property="Margin" Value="0,10,0,0"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+        </Style>
+        <Style x:Name="MarginTop10" TargetType="TextBlock">
+            <Setter Property="Margin" Value="10,10,0,0"></Setter>
+        </Style>
+    </Page.Resources>
+    <Grid>
+        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Center" Background="#193A67">
+            <Image Source="Assets/Images/Home_b.jpg" VerticalAlignment="Stretch" Stretch="Fill"></Image>
+        </Grid>
+        <Grid x:Name="LayoutRoot" >
+            <Grid.Background>
+                <ImageBrush Stretch="None" ImageSource="Assets/Images/Home_b.jpg" AlignmentY="Top" AlignmentX="Center"/>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="0,5,0,10" Background="{Binding AccountBackground}">
+                <Grid Grid.Row="0" Margin="0,0,0,0" Background="{Binding AccountBackground}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel x:Name="stackCancel" Grid.Column="0"  HorizontalAlignment="Center" VerticalAlignment="Center" Tapped="stackCancel_Tapped" Margin="15,0,0,0">
+                        <TextBlock   HorizontalAlignment="Center" Text="Cancel" FontSize="20" FontWeight="Medium" VerticalAlignment="Center"/>
+
+                    </StackPanel>
+                    <StackPanel  Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Center" >
+                        <TextBlock x:Name="txtBNumberOfSeatsSelected"  HorizontalAlignment="Center" Text="3  " FontSize="20" FontWeight="Bold" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                        <TextBlock x:Name="txtbTotalPrice"  HorizontalAlignment="Center" Text=" Seats Selected" FontSize="20"  VerticalAlignment="Center" FontWeight="Bold"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="3" x:Name="stackDone" Orientation="Horizontal" HorizontalAlignment="Right" Tapped="stackDone_Tapped" Margin="0,0,15,0">
+                        <TextBlock    Text="Done" FontSize="20" FontWeight="Medium" VerticalAlignment="Center"/>
+
+                    </StackPanel>
+                </Grid>
+            </Grid>
+            <Border Grid.Row="1" CornerRadius="10" Background="White" Margin="10,0,10,0">
+                
+            <Grid Grid.Row="1"  ScrollViewer.IsVerticalRailEnabled="True"   ScrollViewer.VerticalScrollBarVisibility="Auto">
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <ScrollViewer >
+                    <Grid >
+                        
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        
+                        <StackPanel Grid.Row="0" Margin="0,10,0,0">
+                            <Image Source="Assets/Seats/ss_legend.png" Height="120" Width="Auto" ></Image>
+                        </StackPanel >
+                        
+                        <StackPanel Background="Gray" Grid.Row="1">
+                                <Image Source="" Height="2"></Image>
+                            </StackPanel>
+                        
+                        <Grid Grid.Row="2" Margin="0,20,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions> 
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <Image x:Name="imgr0c0"  Source="Assets/Seats/ss_empty_seat.png" Height="40" Tapped="imgr0c0_Tapped"></Image>  
+                                <TextBlock Text="A1 SUB" Foreground="Black" FontSize="12"></TextBlock>
+                            </StackPanel>
+                                <StackPanel   Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Image x:Name="imgr0c1" Source="Assets/Seats/ss_empty_seat.png" Height="40" Tapped="imgr0c1_Tapped"></Image>
+                                <TextBlock Text="A1 SUB" Foreground="Black" FontSize="12"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Image x:Name="imgr0c2" Tapped="imgr0c2_Tapped" Source="Assets/Seats/ss_empty_seat.png" Height="40"></Image>
+                                <TextBlock Text="A1 SUB" Foreground="Black" FontSize="12"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Column="3"  VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Image x:Name="imgr0c3" Tapped="imgr0c3_Tapped" Source="Assets/Seats/ss_empty_seat.png" Height="40"></Image>
+                                <TextBlock Text="A1 SUB" Foreground="Black" FontSize="12"></TextBlock>
+                            </StackPanel>                         
+                        </Grid>
+                        
+                        <Grid Grid.Row="3" Margin="0,5,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Image x:Name="imgr1c0" Tapped="imgr1c0_Tapped" Source="Assets/Seats/ss_empty_seat.png" Height="40"></Image>
+                                <TextBlock Text="A1 SUB" Foreground="Black" FontSize="12"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Image x:Name="imgr1c1" Tapped="imgr1c1_Tapped" Source="Assets/Seats/ss_empty_seat.png" Height="40"></Image>
+                                <TextBlock Text="A1 SUB" Foreground="Black" FontSize="12"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Column="2"  VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Image x:Name="imgr1c2" Tapped="imgr1c2_Tapped" Source="Assets/Seats/ss_empty_seat.png" Height="40"></Image>
+                                <TextBlock Text="A1 SUB" Foreground="Black" FontSize="12"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Column="3"  VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Image x:Name="imgr1c3" Tapped="imgr1c3_Tapped" Source="Assets/Seats/ss_empty_seat.png" Height="40"></Image>
+                                <TextBlock Text="A1 SUB" Foreground="Black" FontSize="12"></TextBlock>
+                            </StackPanel>
+                        </Grid>
+
+                        <Grid Grid.Row="4" Margin="0,5,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Image x:Name="imgr2c0" Tapped="imgr2c0_Tapped" Source="Assets/Seats/ss_empty_seat.png" Height="40"></Image>
+                                <TextBlock Text="A1 SUB" Foreground="Black" FontSize="12"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Image x:Name="imgr2c1" Tapped="imgr2c1_Tapped" Source="Assets/Seats/ss_empty_seat.png" Height="40"></Image>
+                                <TextBlock Text="A1 SUB" Foreground="Black" FontSize="12"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Column="2"  VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Image x:Name="imgr2c2" Tapped="imgr2c2_Tapped" Source="Assets/Seats/ss_empty_seat.png" Height="40"></Image>
+                                <TextBlock Text="A1 SUB" Foreground="Black" FontSize="12"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Image x:Name="imgr2c3" Tapped="imgr2c3_Tapped" Source="Assets/Seats/ss_empty_seat.png" Height="40"></Image>
+                                <TextBlock Text="A1 SUB" Foreground="Black" FontSize="12"></TextBlock>
+                            </StackPanel>
+                        </Grid>
+                       
+                        <Grid Grid.Row="5" Margin="0,5,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Image x:Name="imgr3c0" Tapped="imgr3c0_Tapped" Source="Assets/Seats/ss_empty_seat.png" Height="40"></Image>
+                                <TextBlock Text="A1 SUB" Foreground="Black" FontSize="12"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Image x:Name="imgr3c1" Tapped="imgr3c1_Tapped" Source="Assets/Seats/ss_empty_seat.png" Height="40"></Image>
+                                <TextBlock Text="A1 SUB" Foreground="Black" FontSize="12"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Image x:Name="imgr3c2"  Tapped="imgr3c2_Tapped" Source="Assets/Seats/ss_empty_seat.png" Height="40"></Image>
+                                <TextBlock Text="A1 SUB" Foreground="Black" FontSize="12"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Image x:Name="imgr3c3" Tapped="imgr3c3_Tapped" Source="Assets/Seats/ss_empty_seat.png" Height="40"></Image>
+                                <TextBlock Text="A1 SUB" Foreground="Black" FontSize="12"></TextBlock>
+                            </StackPanel>
+                        </Grid>
+
+                        <Grid Grid.Row="6" Margin="0,5,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Image x:Name="imgr4c0" Tapped="imgr4c0_Tapped" Source="Assets/Seats/ss_empty_seat.png" Height="40"></Image>
+                                <TextBlock Text="A1 SUB" Foreground="Black" FontSize="12"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Image x:Name="imgr4c1" Tapped="imgr4c1_Tapped" Source="Assets/Seats/ss_empty_seat.png" Height="40"></Image>
+                                <TextBlock Text="A1 SUB" Foreground="Black" FontSize="12"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                
+                            </StackPanel>
+                            <StackPanel Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center">
+                               
+                            </StackPanel>
+                        </Grid>
+
+                        <Grid Grid.Row="7" Margin="0,5,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Image x:Name="imgr5c0" Tapped="imgr5c0_Tapped" Source="Assets/Seats/ss_empty_seat.png" Height="40"></Image>
+                                <TextBlock Text="A1 SUB" Foreground="Black" FontSize="12"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Image x:Name="imgr5c1" Tapped="imgr5c1_Tapped" Source="Assets/Seats/ss_empty_seat.png" Height="40"></Image>
+                                <TextBlock Text="A1 SUB" Foreground="Black" FontSize="12"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Image x:Name="imgr5c2" Tapped="imgr5c2_Tapped" Source="Assets/Seats/ss_empty_seat.png" Height="40"></Image>
+                                <TextBlock Text="A1 SUB" Foreground="Black" FontSize="12"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Image x:Name="imgr5c3" Tapped="imgr5c3_Tapped" Source="Assets/Seats/ss_empty_seat.png" Height="40"></Image>
+                                <TextBlock Text="A1 SUB" Foreground="Black" FontSize="12"></TextBlock>
+                            </StackPanel>
+                        </Grid>
+
+                        <Grid Grid.Row="8" Margin="0,5,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Image x:Name="imgr6c0" Tapped="imgr6c0_Tapped" Source="Assets/Seats/ss_empty_seat.png" Height="40"></Image>
+                                <TextBlock Text="A1 SUB" Foreground="Black" FontSize="12"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Image x:Name="imgr6c1" Tapped="imgr6c1_Tapped" Source="Assets/Seats/ss_empty_seat.png" Height="40"></Image>
+                                <TextBlock Text="A1 SUB" Foreground="Black" FontSize="12"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Image x:Name="imgr6c2" Tapped="imgr6c2_Tapped" Source="Assets/Seats/ss_empty_seat.png" Height="40"></Image>
+                                <TextBlock Text="A1 SUB" Foreground="Black" FontSize="12"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Image x:Name="imgr6c3" Tapped="imgr6c3_Tapped" Source="Assets/Seats/ss_empty_seat.png" Height="40"></Image>
+                                <TextBlock Text="A1 SUB" Foreground="Black" FontSize="12"></TextBlock>
+                            </StackPanel>
+                        </Grid>
+
+                        <Grid Grid.Row="9" Margin="0,5,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Image x:Name="imgr7c0" Tapped="imgr7c0_Tapped" Source="Assets/Seats/ss_empty_seat.png" Height="40"></Image>
+                                <TextBlock Text="A1 SUB" Foreground="Black" FontSize="12"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Image x:Name="imgr7c1" Tapped="imgr7c1_Tapped" Source="Assets/Seats/ss_empty_seat.png" Height="40"></Image>
+                                <TextBlock Text="A1 SUB" Foreground="Black" FontSize="12"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Image x:Name="imgr7c2" Tapped="imgr7c2_Tapped" Source="Assets/Seats/ss_empty_seat.png" Height="40"></Image>
+                                <TextBlock Text="A1 SUB" Foreground="Black" FontSize="12"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                    <Image x:Name="imgr7c3" Tapped="imgr7c3_Tapped" Source="Assets/Seats/ss_empty_seat.png" Height="40"></Image>
+                                <TextBlock Text="A1 SUB" Foreground="Black" FontSize="12"></TextBlock>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </ScrollViewer>
+            </Grid>
+
+            </Border>
+        </Grid>
+    </Grid>
+</Page>
